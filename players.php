@@ -1,6 +1,6 @@
 <?php
    $tag = $_GET['tag'];    
-   ini_set('display_errors', 1);  ini_set('display_startup_errors', 1);  error_reporting(E_ALL);
+   //ini_set('display_errors', 1);  ini_set('display_startup_errors', 1);  error_reporting(E_ALL);
    $tag = substr_replace($tag,"#",0,0);  
    
    $token = "<TOKEN>";
