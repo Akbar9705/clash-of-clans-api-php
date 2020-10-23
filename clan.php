@@ -1,59 +1,34 @@
 <?php
+/*
+ * Akbarali yozgan OOP dagi kod
+ * sana 23.10.2020
+ * Website: UzHackerSW.uz
+ * Namuna: https://uzhackersw.uz/modul/clashofclans/
+ * Akbarali bilan bog`lanish; Email: Akbarali@uzhackersw.uz
+*/
+require_once ("yadro.php");
 $clantag1 = isset($_GET['clanid']) ? trim($_GET['clanid']) : '22LC2CGQJ';
-$clantag = "#".$clantag1;
-   //$clantag = "";
-   
-   /*
-   * Tokenni yozing.
-   * Token olish manzili https://developer.clashofclans.com/#/account
-   * Kod Akbarali tomonidan 0 dan yozildi va tekinga tarqatildi.
-   * Sana: 03/09/2020 yil soat kechqurungi 23:20
-   * Webmanzil: https://uzhackersw.uz/
-   * Namuna: https://uzhackersw.uz/modul/clashofclans/
-   */
-   $token = "<TOKEN>";
-   
-   $url = "https://api.clashofclans.com/v1/clans/" . urlencode($clantag);
-   
-   $ch = curl_init($url);
-   
-   $headr = array();
-   $headr[] = "Accept: application/json";
-   $headr[] = "Authorization: Bearer ".$token;
-   
-   curl_setopt($ch, CURLOPT_HTTPHEADER, $headr);
-   curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, false);
-   curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);
-   curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
-   
-   $res = curl_exec($ch);
-   $data = json_decode($res, true);
-   curl_close($ch);
-   
-   if (isset($data["reason"])) {
-     $errormsg = true;
-   }
-   
-   $members = $data["memberList"];
-   ?>
-<?php
-   if (isset($errormsg)) {
-     if($data['reason'] == "notFound"){
-     echo 'Umuman bironnima topib bo`lmadi. # ni olib tashlaganigiz aniqmi  ? yoki qarang nimaur qoshilib qolgan ko`rinadi.';
-      exit;
+$clantag = "#" . $clantag1;
+$clash = new ClashofClans();
+$data = $clash->clans($clantag);
+if (isset($data["reason"])) {
+    $errormsg = true;
+}
+$members = $data["memberList"];
+if (isset($errormsg)) {
+    if ($data['reason'] == "notFound") {
+        echo 'Umuman bironnima topib bo`lmadi. # ni olib tashlaganigiz aniqmi  ? yoki qarang nimaur qoshilib qolgan ko`rinadi.';
+        exit;
     }
-     echo "<p>", "Failed: ", $data["reason"], " : ", isset($data["message"]) ? $data["message"] : "", "</p></body></html>";
-     exit;
-   }
-   //echo json_encode($data);
-   
-   
-   ?><!doctype html>
+    echo "<p>", "Failed: ", $data["reason"], " : ", isset($data["message"]) ? $data["message"] : "", "</p></body></html>";
+    exit;
+}
+?>
+ <!doctype html>
 <html lang="en">
    <head>
       <meta charset="UTF-8">
       <title><?php echo $data["name"]; ?> klan haqida ma'lumot</title>
-      <!--<link href="//uzhackersw.uz/theme/theme/css/bootstrap.css" rel="stylesheet" id="bootstrap-css">-->
       <link href="//uzhackersw.uz/theme/theme/css/bootstrap.css" rel="stylesheet" id="bootstrap-css">
       <link href="//uzhackersw.uz/theme/theme/css/colors.css?ver=0.95" rel="stylesheet" id="bootstrap-css">
       <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>

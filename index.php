@@ -1,4 +1,13 @@
 <!doctype html>
+<!-- 
+  /*
+ * Akbarali yozgan OOP dagi kod
+ * sana 23.10.2020
+ * Website: UzHackerSW.uz
+ * Namuna: https://uzhackersw.uz/modul/clashofclans/
+ * Akbarali bilan bog`lanish; Email: Akbarali@uzhackersw.uz
+*/
+ -->
 <html lang="en">
 <head>
  <meta charset="UTF-8">
@@ -10,5 +19,8 @@
   <input type="text" class="form-control" name="clanid" >
   <input class="btn btn-outline-secondary" type="submit">
   </form>
+  <?php require_once ("yadro.php"); ?>
+  <?php $clash = new ClashofClans();?>
+  <?=$clash->view();?>
 </body>
 </html>
