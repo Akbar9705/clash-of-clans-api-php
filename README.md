@@ -25,7 +25,7 @@ returns $data as an array
 # [link to running code](https://uzhackersw.uz/modul/clashofclans/)
 # Don't forget to click the asterisk if you find it useful :)
 
-# CLash of Clans API php
+# Clash of Clans API php
 Klan va uning a'zolari haqida ma'lumot olish uchun eng oddiy Clash of Clans kutubxonasi.
 
 Foydalanish bo'yicha ko'rsatma
