@@ -1,4 +1,4 @@
-# CLash of Clans API php
+# Clash of Clans API php
 The simplest Clash of Clans library for information about the Clan and its members.
  
 Usage instruction
@@ -51,6 +51,8 @@ $data sizga massiv ko`rinishida javobni qaytaradi
 
 # [ishlab turgan kodga havola](https://uzhackersw.uz/modul/clashofclans/)
 # Agar sizga foydali bo'lsa, yulduzcha tugmachasini bosishni unutmang :)
+
+#images
 ![index](https://raw.githubusercontent.com/akbarali1/clash-of-clans-api-php/master/index.png)
 ![clans](https://raw.githubusercontent.com/akbarali1/clash-of-clans-api-php/master/clans.png)
 ![players](https://raw.githubusercontent.com/akbarali1/clash-of-clans-api-php/master/players.png)
