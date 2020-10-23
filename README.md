@@ -51,3 +51,6 @@ $data sizga massiv ko`rinishida javobni qaytaradi
 
 # [ishlab turgan kodga havola](https://uzhackersw.uz/modul/clashofclans/)
 # Agar sizga foydali bo'lsa, yulduzcha tugmachasini bosishni unutmang :)
+![index](https://raw.githubusercontent.com/akbarali1/clash-of-clans-api-php/master/index.png)
+![clans](https://raw.githubusercontent.com/akbarali1/clash-of-clans-api-php/master/clans.png)
+![players](https://raw.githubusercontent.com/akbarali1/clash-of-clans-api-php/master/players.png)
